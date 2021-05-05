@@ -2,4 +2,4 @@
     <%- include('_header.ejs', { title: `Paste #${paste[0].id}` }); %>
     <%- marked(paste[0].text); %>
     <%- include('_footer.ejs', { js: false }); %>
-<% } else { %><%= paste[0].text %><% } %>
+<% } else { %><%- paste[0].text %><% } %>
