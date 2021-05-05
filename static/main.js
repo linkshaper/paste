@@ -9,16 +9,16 @@ function paste() {
     let text = document.getElementById('textarea-text');
     let auth = document.getElementById('auth-text');
     let markdown = document.getElementById('markdown-check');
-
-    text = text.value;
-    auth = auth.value;
-    if(!localStorage.getItem('auth')) localStorage.setItem('auth', auth);
-    markdown = markdown.checked;
+    if(!localStorage.getItem('auth')) localStorage.setItem('auth', auth.value);
 
     return fetch("/", {
         method: "POST",
         headers: { 'Content-Type': "application/json" },
-        body: JSON.stringify({ text, auth, markdown })
+        body: JSON.stringify({
+            text: text.value,
+            auth: auth.value,
+            markdown: markdown.checked
+        })
     }).then(r => r.json()).then(r =>
         Swal.fire({
             icon: (r.ok) ? "success" : "error",
