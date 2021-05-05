@@ -61,7 +61,8 @@ app.get('/p/:pasteID', (req, res) =>
         if(err) throw err;
         if(!paste[0]) return res.render('error', { code: 404 });
 
-        return res.render('view', { paste, marked });
+        if(Boolean(paste[0].markdown)) return res.render('view', { paste, marked });
+        else return res.end(paste[0].text);
     })
 );
 
