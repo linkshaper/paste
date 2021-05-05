@@ -1,9 +1,18 @@
+window.onload = () => {
+    if(localStorage.getItem('auth')) {
+        let auth = document.getElementById('auth-text');
+        auth.value = localStorage.getItem('auth');
+        auth.readonly = true;
+    }
+};
+
 function paste() {
     let text = document.getElementById('textarea-text');
     let auth = document.getElementById('auth-text');
     let markdown = document.getElementById('markdown-check');
 
     text = text.value;
+    if(!localStorage.getItem('auth')) localStorage.setItem('auth', text);
     auth = auth.value;
     markdown = markdown.checked;
 
@@ -25,4 +34,4 @@ function paste() {
             html: "Internal Client Error. Check the browser console."
         });
     });
-}
+};

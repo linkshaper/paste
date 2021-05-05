@@ -62,7 +62,10 @@ app.get('/p/:pasteID', (req, res) =>
         if(!paste[0]) return res.render('error', { code: 404 });
 
         if(Boolean(paste[0].markdown)) return res.render('view', { paste, marked });
-        else return res.send(paste[0].text.split('\n').join('<br>'));
+        else {
+            req.setEncoding('utf8');
+            return res.end(paste[0].text);
+        }
     })
 );
 
