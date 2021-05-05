@@ -2,7 +2,6 @@ window.onload = () => {
     if(localStorage.getItem('auth')) {
         let auth = document.getElementById('auth-text');
         auth.value = localStorage.getItem('auth');
-        auth.readonly = true;
     }
 };
 
@@ -12,7 +11,7 @@ function paste() {
     let markdown = document.getElementById('markdown-check');
 
     text = text.value;
-    if(!localStorage.getItem('auth')) localStorage.setItem('auth', text);
+    if(!localStorage.getItem('auth')) localStorage.setItem('auth', auth);
     auth = auth.value;
     markdown = markdown.checked;
 
