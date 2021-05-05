@@ -63,7 +63,10 @@ app.get('/p/:pasteID', (req, res) =>
 
         if(Boolean(paste[0].markdown)) return res.render('view', { paste, marked });
         else {
-            req.setEncoding('utf8');
+            res.writeHead(200, {
+                'Content-Type': 'text/plain; charset=utf-8'
+            });
+            
             return res.end(paste[0].text);
         }
     })
