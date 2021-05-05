@@ -1,0 +1,17 @@
+<%- include('_header.ejs', { title: `Create a paste` }); %>
+<div class="container">
+    <div class="form-group">
+        <label for="auth-text">Authentification token</label>
+        <input type="text" class="form-control" id="auth-text">
+    </div>
+    <div class="form-group">
+        <label for="textarea-text">Text</label>
+        <textarea class="form-control" id="textarea-text" rows="8"></textarea>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="markdown-check">
+        <label class="form-check-label" for="markdown-check">Use markdown while view paste</label>
+    </div>
+    <button type="submit" onclick="paste()" class="btn btn-primary">Submit</button>
+</div>
+<%- include('_footer.ejs', { js: true }); %>

@@ -1,0 +1,9 @@
+<%
+    let processedCodes = {
+        404: "Not Found",
+        500: "Internal Server Error"
+    };
+%><%- include('_header.ejs', { title: `Error ${code}` }); %>
+<h1>Error <%- code %></h1>
+<h2><%- processedCodes[code] %></h2>
+<%- include('_footer.ejs', { js: false }); %>

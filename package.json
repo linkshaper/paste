@@ -1,0 +1,17 @@
+{
+    "name": "paste",
+    "version": "1.0.0",
+    "description": "An simple text paste app",
+    "main": "index.js",
+    "repository": "https://github.com/linkshaper/paste",
+    "author": "linkshaper",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv-flow": "^3.2.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "marked": "^2.0.3",
+        "mysql": "^2.18.1",
+        "node-fetch": "^2.6.1"
+    }
+}
