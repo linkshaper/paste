@@ -11,8 +11,8 @@ function paste() {
     let markdown = document.getElementById('markdown-check');
 
     text = text.value;
-    if(!localStorage.getItem('auth')) localStorage.setItem('auth', auth);
     auth = auth.value;
+    if(!localStorage.getItem('auth')) localStorage.setItem('auth', auth);
     markdown = markdown.checked;
 
     return fetch("/", {
